@@ -61,5 +61,11 @@ namespace Pos_PointOfSales
             this.legalString = row[0]["OptionalString"].ToString();
             return this;
         }
+        public void Update()
+        {
+            relactionDb db = new relactionDb();
+            string query = $"UPDATE [dbo].[Company] SET [NameCompany] =  '{NameCompany}', [TaxCode] = '{TaxCode}', [FiscalCode]=  '{FiscalCode}', [Address] = '{ Address} ',[State] = '{State}',[PhoneNumber] = '{PhoneNumber}',[email] = '{email}',[legalString] = '{legalString}', [OptionalString] = '{OptionalString}'  WHERE Id = {id};";
+            db.voidQuery(Global.settings.conn, query);
+        }
     }
 }
