@@ -1,4 +1,4 @@
-﻿## POS Point Of Sales Project 
+﻿# **#POS Point Of Sales Project**
 
 This project is a simple Pos write C# windowform for windows client and read/write to database on Microsoft Sql Server.
 
@@ -19,6 +19,49 @@ For Start create a file SetApp.xml
 </set>
 
 ```
+Next step before starting the program create an administrator user for the test on your database (in the new version this problem will be solved)
+```sql
+CREATE TABLE users(
+	[Id] [bigint] IDENTITY(1,1) NOT NULL, 
+	[username] [varchar](255) NOT NULL unique,
+	[password] [varchar](255) NOT NULL,
+	[name] [varchar](255) NOT NULL,
+	[surname] [varchar](255) NOT NULL
+ );
+INSERT INTO [dbo].[users]
+  (
+    [username]
+   ,[password]
+   ,[name]
+   ,[surname])
+   VALUES(
+   'ADMIN'
+   ,'YOUR_ADMIN_PASSOWORD'
+   ,'ADMIN'
+   ,'ADMIN');
+```
+## Prerequisites
+
+Prerequisites is:
+
+|                |Version                        | Future Update                         |
+|----------------|-------------------------------|-----------------------------|
+|Dotnet 		 |`Framework '4.7.2'` 			 |Yes                          |
+|MS SQL Sever    |`2019`                         |No                           |
+|Windows         |`10.0.19042.1110`              |Yes                          |
+
+work is underway to make it compatible with:
+
+|                |Version                        | Year                        |
+|----------------|-------------------------------|-----------------------------|
+|Dotnet 		 |`Core '4.7.2'` 			     | 2022                        |
+|MySql           |`*******`                      | 2022                        |
+|MongoDB         |`*******`                      | 2023                        |
+|Ubunto          |`20.4`                         | 2023                        |
+|WebClient       |`*******`                      | 2024                        |
+|Chrome Addon    |`*******`                      | 2024                        |
+
+
 
 ## Licenses
 [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.html) 
