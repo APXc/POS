@@ -26,5 +26,11 @@ namespace Pos_PointOfSales
         {
 
         }
+
+        private void licenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form fm = new LicenseForm();
+            fm.Show();
+        }
     }
 }

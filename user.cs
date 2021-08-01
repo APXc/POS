@@ -56,15 +56,22 @@ namespace Pos_PointOfSales
             string query = $"Select * from [dbo].[users] where [username] = '{username}';";
             DataRow[] row = db.query(Global.settings.conn, query);
 
-            if (password == row[0]["password"].ToString())
+            try
             {
-                return true;
+                if (password == row[0]["password"].ToString())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
-            else
+            catch
             {
                 return false;
             }
-
         }
     }
 }
