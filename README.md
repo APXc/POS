@@ -1,8 +1,8 @@
-﻿#POS Point Of Sales Project 
+﻿##POS Point Of Sales Project 
 
 This project is a simple Pos write C# windowform for windows client and read/write to database on Microsoft Sql Server.
 
-#Start
+##Start
 
 For Start create a file SetApp.xml
 
