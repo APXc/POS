@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+  <it>
+    <Success>
+      <title>
+        Operazione Complettata
+      </title>
+      <messages>
+        <GenericSuccess>
+         l'operazione richiesta è stata completata con Successo
+        </GenericSuccess>
+      </messages>
+    </Success>
+    <Error>
+      <title>
+        Errore
+      </title>
+      <messages>
+        <GenericError>
+          Errore Generico
+        </GenericError>
+        <DbConnectionError>
+          Errore di Conessione a Data Base
+        </DbConnectionError>
+        <SqlError>
+          Errore si è generato un Errore SQL controlare il Log del DataBase
+        </SqlError>
+        <FormatError>
+          Errore il contenuto passato non è del Formato Valido
+        </FormatError>
+        <InvalidOperationError>
+          Errore opperazione non valida
+        </InvalidOperationError>
+      </messages>
+    </Error>
+  </it>
+</lang>
