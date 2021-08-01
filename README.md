@@ -3,7 +3,8 @@
 This project is a simple Pos write C# windowform for windows client and read/write to database on Microsoft Sql Server.
 
 #Start
-For Start creata a file SetApp.xml
+
+For Start create a file SetApp.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -20,5 +21,15 @@ For Start creata a file SetApp.xml
 ```
 
 ## Licenses
+[GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.html) 
+    Copyright (C) 2021 Alessio Pellizzaro
 
-Content is released under [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.html) which gives you permission to use content for almost any purpose (but does not grant you any trademark permissions). See [notices](notices.md) for complete details, including attribution guidelines, contribution terms, and software and third-party licenses and permissions.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
