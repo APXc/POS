@@ -1,16 +1,22 @@
-﻿cff-version: 1.2.0
-message: If you use this software in your work, please cite it using the following metadata
-title: POS
+﻿# YAML 1.2
+---
+abstract: "Command line program to convert from Citation File Format to various other formats such as BibTeX, EndNote, RIS, schema.org, and .zenodo.json."
 authors:
-- family-names: Pellizzaro
-  given-names: Alessio
-keywords:
-- C#
-- MSSql
-- POS
-- Point of Sales
-- Windows Client
-version: 0.6.0
+  -
+    affiliation: "AP"
+    family-names: Pellizzaro
+    given-names: Alessio
+    orcid: https://orcid.org/0000-0001-6164-0181
+cff-version: "1.0.3"
 date-released: 2021-08-01
+doi: 10.5281/zenodo.1162057
+keywords:
+  - "C#"
+  - "POS"
+  - "MS Sql"
+  - "Windows"
 license: GPL-3.0 
-repository-artifact: https://github.com/APXc/POS
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/APXc/POS"
+title: POS
+version: "1.3.3"
