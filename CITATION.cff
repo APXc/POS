@@ -1,8 +1,10 @@
-﻿cff-version: 1.1.0
-message: If you use this software, please cite it as below.
+﻿cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Pellizzaro
-    given-names: Alessio
-title: Pos - Poin Of Sales
+- family-names: "Alessio"
+  given-names: "Pellizzaro"
+title: "My POS Software"
 version: 0.0.1
-date-released: 2021-12-01
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
+url: "https://github.com/APXc/POS"
