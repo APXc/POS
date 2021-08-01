@@ -1,10 +1,16 @@
 ﻿cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: If you use this software in your work, please cite it using the following metadata
+title: POS
 authors:
-- family-names: "Alessio"
-  given-names: "Pellizzaro"
-title: "My POS Software"
-version: 0.0.1
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-url: "https://github.com/APXc/POS"
+- family-names: Pellizzaro
+  given-names: Alessio
+keywords:
+- C#
+- MSSql
+- POS
+- Point of Sales
+- Windows Client
+version: 0.6.0
+date-released: 2021-08-01
+license: GPL-3.0 
+repository-artifact: https://github.com/APXc/POS
