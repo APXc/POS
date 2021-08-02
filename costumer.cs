@@ -26,7 +26,7 @@ namespace Pos_PointOfSales
         public string notes { get; set; }
         public int standardDiScont { get; set; }
 
-        public costumer addCompany(string name, string surname, string fiscalCode, string address, string state, string phoneNumber, string email, string notes, string mktgId, int standardDiScont)
+        public costumer Add(string name, string surname, string fiscalCode, string address, string state, string phoneNumber, string email, string notes, string mktgId, int standardDiScont)
         {
             string query = $"INSERT INTO[dbo].[Costumer] ([Name],[Surname],[FiscalCode],[Address],[State],[PhoneNumber],[Email],[Notes],[MktgId], [standardDiScont]) VALUES( {name} , {surname}, {fiscalCode} , {address}, {state}, { phoneNumber}, {email}, {notes}, {mktgId}, {standardDiScont})";
             relactionDb db = new relactionDb();
