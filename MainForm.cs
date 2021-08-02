@@ -32,5 +32,14 @@ namespace Pos_PointOfSales
             Form fm = new LicenseForm();
             fm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form fm = new FindCostumerForm();
+            fm.Show();
+
+        }
+
+
     }
 }

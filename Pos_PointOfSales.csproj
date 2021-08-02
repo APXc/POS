@@ -81,6 +81,18 @@
       <DependentUpon>CompanyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="costumer.cs" />
+    <Compile Include="CostumerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostumerForm.Designer.cs">
+      <DependentUpon>CostumerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindCostumerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindCostumerForm.Designer.cs">
+      <DependentUpon>FindCostumerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     <Content Include="query\InsertCompany.sql" />
     <EmbeddedResource Include="CompanyForm.resx">
       <DependentUpon>CompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostumerForm.resx">
+      <DependentUpon>CostumerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindCostumerForm.resx">
+      <DependentUpon>FindCostumerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.en-GB.resx">
       <DependentUpon>Form1.cs</DependentUpon>

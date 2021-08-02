@@ -20,15 +20,15 @@ namespace Pos_PointOfSales
             InitializeComponent();
             creation = true;
             L_change.Visible = true;
+            client = new costumer();
         }
         public CostumerForm(int id)
         {
             InitializeComponent();
             creation = false;
             this.id = id;
+            client = new costumer();
             setCostumer();
-
-
 
         }
 
@@ -72,7 +72,7 @@ namespace Pos_PointOfSales
             client.email = TB_email.Text;
             client.notes = TB_notes.Text;
             client.mktgId = TB_mktgId.Text;
-            client.standardDiScont = Convert.ToInt32(TB_standardDiScont.Text);
+            client.standardDiScont = TB_standardDiScont.Text != "" ? Convert.ToInt32(TB_standardDiScont.Text) : 0;
 
         }
 

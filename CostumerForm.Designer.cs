@@ -68,6 +68,7 @@
             this.BTN_action.TabIndex = 0;
             this.BTN_action.Text = "Action";
             this.BTN_action.UseVisualStyleBackColor = true;
+            this.BTN_action.Click += new System.EventHandler(this.BTN_action_Click);
             // 
             // DGV_transation
             // 
