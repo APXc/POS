@@ -21,12 +21,14 @@ namespace Pos_PointOfSales
             sett.init();
             Global.settings = sett;
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(sett.lang);
+          
+
         }
 
-        private void BTN_login_Click(object sender, EventArgs e)
+        private void actionLogin()
         {
             login login = new login();
-           if (login.test(TB_username.Text, TB_password.Text))
+            if (login.test(TB_username.Text, TB_password.Text))
             {
                 Global.Loged = true;
                 user us = new user();
@@ -37,16 +39,31 @@ namespace Pos_PointOfSales
                 Global.company = company;
                 this.Close();
             }
-           else
+            else
             {
                 MessageBox.Show("the credential is Incorect", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+        }
+
+        private void BTN_login_Click(object sender, EventArgs e)
+        {
+            actionLogin();
+
+
         }
 
         private void BTN_clouse_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void PressEnter (object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                actionLogin();
+            }
+           
         }
 
         private void loginFrom_Load(object sender, EventArgs e)

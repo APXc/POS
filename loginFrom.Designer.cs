@@ -49,12 +49,14 @@
             // 
             resources.ApplyResources(this.TB_username, "TB_username");
             this.TB_username.Name = "TB_username";
+            this.TB_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressEnter);
             // 
             // TB_password
             // 
             resources.ApplyResources(this.TB_password, "TB_password");
             this.TB_password.Name = "TB_password";
             this.TB_password.UseSystemPasswordChar = true;
+            this.TB_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressEnter);
             // 
             // label1
             // 
@@ -72,6 +74,7 @@
             this.BTN_login.Name = "BTN_login";
             this.BTN_login.UseVisualStyleBackColor = true;
             this.BTN_login.Click += new System.EventHandler(this.BTN_login_Click);
+            this.BTN_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressEnter);
             // 
             // BTN_clouse
             // 
@@ -93,6 +96,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "loginFrom";
             this.Load += new System.EventHandler(this.loginFrom_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -58,10 +58,13 @@ namespace Pos_PointOfSales
 
         private void DataBaseTest()
         {
-            string query = "IF OBJECT_ID(N'dbo.users', N'U') IS NULL BEGIN  CREATE TABLE users([Id] [bigint] IDENTITY(1,1) NOT NULL, [username] [varchar](255) NOT NULL unique, [password] [varchar](255) NOT NULL,[name] [varchar](255) NOT NULL,[surname] [varchar](255) NOT NULL); END;";
-            string query2 = "IF OBJECT_ID(N'dbo.Company', N'U') IS NULL BEGIN  CREATE TABLE Company(Id [bigint] IDENTITY(1,1) NOT NULL, NameCompany [varchar](255) NOT NULL, TaxCode [varchar](255) NOT NULL,FiscalCode [varchar](255) NOT NULL,Address [varchar](255) NOT NULL, State [varchar](255) NOT NULL, PhoneNumber [varchar](255) NOT NULL , email [varchar](255) NOT NULL,  legalString [varchar](255) NOT NULL, OptionalString  [varchar](255) NOT NULL); END;";
-            TestOnDB(query);
-            TestOnDB(query2);
+            string TestUser = "IF OBJECT_ID(N'dbo.users', N'U') IS NULL BEGIN  CREATE TABLE users([Id] [bigint] IDENTITY(1,1) NOT NULL, [username] [varchar](255) NOT NULL unique, [password] [varchar](255) NOT NULL,[name] [varchar](255) NOT NULL,[surname] [varchar](255) NOT NULL); END;";
+            string TestCompany = "IF OBJECT_ID(N'dbo.Company', N'U') IS NULL BEGIN  CREATE TABLE Company(Id [bigint] IDENTITY(1,1) NOT NULL, NameCompany [varchar](255) NOT NULL, TaxCode [varchar](255) NOT NULL,FiscalCode [varchar](255) NOT NULL,Address [varchar](255) NOT NULL, State [varchar](255) NOT NULL, PhoneNumber [varchar](255) NOT NULL , email [varchar](255) NOT NULL,  legalString [varchar](255) NOT NULL, OptionalString  [varchar](255) NOT NULL); END;";
+            string TestCostumer = "IF OBJECT_ID(N'dbo.Costumer', N'U') IS NULL BEGIN  CREATE TABLE Costumer(Id [bigint] IDENTITY(1,1) NOT NULL, Name [varchar](255) NOT NULL, Surname [varchar](255) NOT NULL, FiscalCode [varchar](255), Address [varchar](255), State [varchar](255), PhoneNumber [varchar](255) , Email [varchar](255),  Notes [varchar](255), MktgId  [varchar](255), standardDiScont [bigint]); END;";
+
+            TestOnDB(TestUser);
+            TestOnDB(TestCompany);
+            TestOnDB(TestCostumer);
         }
         internal string GetConnectionString()
         {
