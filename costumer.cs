@@ -46,7 +46,7 @@ namespace Pos_PointOfSales
             this.standardDiScont = Convert.ToInt32(row[0]["standardDiScont"]);
             return this;
         }
-        public costumer SetByKey(int id)
+        public costumer SetByKey(int id) 
         {
             relactionDb db = new relactionDb();
             string query = $"Select * from [dbo].[Costumer] where id={id};";
@@ -77,6 +77,11 @@ namespace Pos_PointOfSales
             string query = $"Select * from [dbo].[Costumer];";
             DataTable dt = db.queryToTable(Global.settings.conn, query);
             return dt;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Costume {id} - {name} {surname} ");
         }
     }
 }

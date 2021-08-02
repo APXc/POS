@@ -15,26 +15,26 @@ namespace Pos_PointOfSales
         private int id { get; set; }
         private bool creation { get; set; }
         private costumer client { get; set; }
+        private bool isFirst { get; set; }
         public CostumerForm()
         {
             InitializeComponent();
             creation = true;
-            L_change.Visible = true;
-            client = new costumer();
+           
         }
         public CostumerForm(int id)
         {
             InitializeComponent();
             creation = false;
             this.id = id;
-            client = new costumer();
-            setCostumer();
+            isFirst = true;
+
 
         }
 
-        private void setCostumer ()
+        private void setCostumer(int ID)
         {
-            client.SetByKey(this.id);
+            client = client.SetByKey(ID);
             L_change.Visible = false;
             TB_name.Text = client.name;
             TB_surname.Text = client.surname;
@@ -50,6 +50,7 @@ namespace Pos_PointOfSales
 
         private void CostumerForm_Load(object sender, EventArgs e)
         {
+            this.client = new costumer();
             if (creation)
             {
                 L_change.Visible = true;
@@ -57,23 +58,32 @@ namespace Pos_PointOfSales
                 TB_id.Visible = false;
                 label5.Visible = false;
             }
+            else
+            {
+                TB_id.Text = id.ToString();
+                setCostumer(id);
+                isFirst = false;
+            }
         }
 
         private void ModifyValue(object sender, EventArgs e)
         {
-            L_change.Visible = true;
+            if(!isFirst)
+            {
+                L_change.Visible = true;
 
-            client.name = TB_name.Text;
-            client.surname = TB_surname.Text;
-            client.fiscalCode = TB_fiscalCode.Text;
-            client.address = TB_address.Text;
-            client.state = TB_state.Text;
-            client.phoneNumber = TB_phoneNumber.Text;
-            client.email = TB_email.Text;
-            client.notes = TB_notes.Text;
-            client.mktgId = TB_mktgId.Text;
-            client.standardDiScont = TB_standardDiScont.Text != "" ? Convert.ToInt32(TB_standardDiScont.Text) : 0;
-
+                client.name = TB_name.Text;
+                client.surname = TB_surname.Text;
+                client.fiscalCode = TB_fiscalCode.Text;
+                client.address = TB_address.Text;
+                client.state = TB_state.Text;
+                client.phoneNumber = TB_phoneNumber.Text;
+                client.email = TB_email.Text;
+                client.notes = TB_notes.Text;
+                client.mktgId = TB_mktgId.Text;
+                client.standardDiScont = TB_standardDiScont.Text != "" ? Convert.ToInt32(TB_standardDiScont.Text) : 0;
+            }
+            
         }
 
         private void BTN_action_Click(object sender, EventArgs e)
@@ -105,7 +115,9 @@ namespace Pos_PointOfSales
 
         private void BTN_reload_Click(object sender, EventArgs e)
         {
-            setCostumer();
+            isFirst = true;
+            setCostumer(this.id);
+            isFirst = false;
         }
     }
 }

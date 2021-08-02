@@ -68,17 +68,11 @@ namespace Pos_PointOfSales
 
             var a = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
             var s = dataGridView1.CurrentRow.Cells[0];
-            //this.IDtext.Text = s.Value.ToString();
             try
             {
-                Console.WriteLine($"selcet {s}");
-                Form form = new CostumerForm(s.RowIndex);
+                //Console.WriteLine($"selcet {s.Value.ToString()}");
+                Form form = new CostumerForm(Convert.ToInt32(s.Value));
                 form.Show();
-                //Transaction ase = new Transaction();
-                //ase.ID = (int)s.Value;
-                //ase.SetById();
-                //Form ar = new DetailMovimento(ase.ID);
-                //ar.Show();
 
             }
             catch (System.IndexOutOfRangeException)
