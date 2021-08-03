@@ -61,11 +61,17 @@ work is underway to make it compatible with:
 |WebClient       |`*******`                      | 2024                        |
 |Chrome Addon    |`*******`                      | 2024                        |
 
+## Attection 
+ 
+   This is a test project, do not use in a production environment
+   This Software is not currently certified by any National Tax Agency
+   This software does not guarantee that there will be no data loss
 
 
 ## Licenses
 [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.html) 
-    Copyright (C) 2021 Alessio Pellizzaro
+
+   POS_PointOfSales Copyright (C) 2021 Alessio Pellizzaro
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
