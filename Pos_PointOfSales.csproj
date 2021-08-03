@@ -73,6 +73,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="article.cs" />
+    <Compile Include="ArticleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArticleForm.Designer.cs">
+      <DependentUpon>ArticleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Company.cs" />
     <Compile Include="CompanyForm.cs">
       <SubType>Form</SubType>
@@ -86,6 +93,12 @@
     </Compile>
     <Compile Include="CostumerForm.Designer.cs">
       <DependentUpon>CostumerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindArticleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindArticleForm.Designer.cs">
+      <DependentUpon>FindArticleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FindCostumerForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +142,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="cash-register-duotone.ico" />
+    <Content Include="query\CreateTableArticle.sql" />
     <Content Include="query\CreateTableCompany.sql" />
     <Compile Include="relactionDb.cs" />
     <Compile Include="supplier.cs" />
@@ -142,11 +156,17 @@
     <Content Include="query\CreateTableCostumer.sql" />
     <Content Include="query\CreateTableSupplier.sql" />
     <Content Include="query\InsertCompany.sql" />
+    <EmbeddedResource Include="ArticleForm.resx">
+      <DependentUpon>ArticleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompanyForm.resx">
       <DependentUpon>CompanyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CostumerForm.resx">
       <DependentUpon>CostumerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindArticleForm.resx">
+      <DependentUpon>FindArticleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindCostumerForm.resx">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>

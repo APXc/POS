@@ -53,6 +53,7 @@
             this.BTN_close.TabIndex = 28;
             this.BTN_close.Text = "Close";
             this.BTN_close.UseVisualStyleBackColor = true;
+            this.BTN_close.Click += new System.EventHandler(this.BTN_clouse_Click);
             // 
             // BTN_action
             // 
@@ -62,6 +63,7 @@
             this.BTN_action.TabIndex = 27;
             this.BTN_action.Text = "Created a New Article";
             this.BTN_action.UseVisualStyleBackColor = true;
+            this.BTN_action.Click += new System.EventHandler(this.BTN_action_Click);
             // 
             // label4
             // 
@@ -96,6 +98,7 @@
             this.TB_id.Name = "TB_id";
             this.TB_id.Size = new System.Drawing.Size(192, 20);
             this.TB_id.TabIndex = 23;
+            this.TB_id.TextChanged += new System.EventHandler(this.filter_id);
             // 
             // TB_barcode
             // 
@@ -103,6 +106,7 @@
             this.TB_barcode.Name = "TB_barcode";
             this.TB_barcode.Size = new System.Drawing.Size(192, 20);
             this.TB_barcode.TabIndex = 22;
+            this.TB_barcode.TextChanged += new System.EventHandler(this.filter_barcode);
             // 
             // TB_code
             // 
@@ -110,6 +114,7 @@
             this.TB_code.Name = "TB_code";
             this.TB_code.Size = new System.Drawing.Size(192, 20);
             this.TB_code.TabIndex = 21;
+            this.TB_code.TextChanged += new System.EventHandler(this.filter_code);
             // 
             // dataGridView1
             // 
@@ -122,6 +127,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1215, 466);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.SelectRowByUser);
             // 
             // label1
             // 
@@ -147,6 +153,7 @@
             this.TB_rapidcode.Name = "TB_rapidcode";
             this.TB_rapidcode.Size = new System.Drawing.Size(192, 20);
             this.TB_rapidcode.TabIndex = 30;
+            this.TB_rapidcode.TextChanged += new System.EventHandler(this.filter_rapidcode);
             // 
             // FindArticleForm
             // 

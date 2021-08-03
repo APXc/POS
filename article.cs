@@ -30,7 +30,7 @@ namespace Pos_PointOfSales
         public article Add(string code, string barcode, string rapidcode, bool isInvectory, string description, string notes, double salesPrice, double purchasePrice, double salesTax, double purchaseTax)
         {
             string vectorBool = isInvectory ? "Y" : "N";
-            string query = $"INSERT INTO[dbo].[Article] ([code], [barcode], [rapidcode], [isInvectory], [description], [notes] , [salesPrice], [purchasePrice], [salesTax], [purchaseTax]) VALUES( '{code}' , '{barcode}' , '{rapidcode}', '{vectorBool}', '{description}', '{notes}', '{salesPrice}', '{purchasePrice}', '{salesTax}', '{purchaseTax}')";
+            string query = $"INSERT INTO[dbo].[Article] ([code], [barcode], [rapidcode], [isInvectory], [description], [notes] , [salesPrice], [purchasePrice], [salesTax], [purchaseTax]) VALUES( '{code}' , '{barcode}' , '{rapidcode}', '{vectorBool}', '{description}', '{notes}', {salesPrice}, {purchasePrice}, {salesTax}, {purchaseTax})";
             relactionDb db = new relactionDb();
             db.voidQuery(Global.settings.conn, query);
             query = $"Select * from [dbo].[Article] where [code] = '{code}';";
@@ -57,7 +57,7 @@ namespace Pos_PointOfSales
         public article SetByKey(int id)
         {
             relactionDb db = new relactionDb();
-            string query = $"Select * from [dbo].[Article] where id={id};";
+            string query = $"Select * from [dbo].[Article] where Id={id};";
             DataRow[] row = db.query(Global.settings.conn, query);
             this.code = row[0]["code"].ToString();
             this.barcode = row[0]["barcode"].ToString();
@@ -82,7 +82,7 @@ namespace Pos_PointOfSales
         {
             relactionDb db = new relactionDb();
             string vectorBool = isInvectory ? "Y" : "N";
-            string query = $"UPDATE [dbo].[Article] SET [code] = '{code}' , [barcode] = '{barcode}', [rapidcode] = '{rapidcode}', [isInvectory] = '{vectorBool}', [description] = '{description}', [notes] = '{notes}', [salesPrice] = '{salesPrice}', [purchasePrice] = '{purchasePrice}', [salesTax] = '{salesTax}', [purchaseTax]  = '{purchaseTax}' WHERE Id = {id};";
+            string query = $"UPDATE [dbo].[Article] SET [code] = '{code}' , [barcode] = '{barcode}', [rapidcode] = '{rapidcode}', [isInvectory] = '{vectorBool}', [description] = '{description}', [notes] = '{notes}', [salesPrice] = {salesPrice}, [purchasePrice] = {purchasePrice}, [salesTax] ={salesTax}, [purchaseTax]  = {purchaseTax} WHERE Id = {id};";
             db.voidQuery(Global.settings.conn, query);
         }
 

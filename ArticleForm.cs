@@ -38,10 +38,11 @@ namespace Pos_PointOfSales
                 L_change.Visible = true;
                 TB_id.Enabled = false;
                 TB_id.Visible = false;
-                label5.Visible = false;
+                label1.Visible = false;
             }
             else
             {
+                L_change.Visible = false;
                 TB_id.Text = id.ToString();
                 setArticle(id);
                 isFirst = false;
@@ -74,10 +75,10 @@ namespace Pos_PointOfSales
                 article.barcode = TB_barcode.Text ;
                 article.rapidcode = TB_rapidcode.Text ;
                 article.notes = TB_notes.Text;
-                article.salesPrice = Convert.ToDouble(TB_salesPrice.Text);
-                article.salesTax = Convert.ToDouble(TB_salesTax.Text);
-                article.purchasePrice = Convert.ToDouble(TB_purchasePrice.Text);
-                article.purchaseTax = Convert.ToDouble(TB_purchaseTax.Text);
+                article.salesPrice = TB_salesPrice.Text != "" ? Convert.ToDouble(TB_salesPrice.Text) : 0.00;
+                article.salesTax = TB_salesTax.Text != "" ? Convert.ToDouble(TB_salesTax.Text) : 0.00;
+                article.purchasePrice = TB_purchasePrice.Text != "" ? Convert.ToDouble(TB_purchasePrice.Text) : 0.00;
+                article.purchaseTax = TB_purchaseTax.Text != "" ? Convert.ToDouble(TB_purchaseTax.Text) : 0.00;
                 article.description = TB_description.Text;
                 article.isInvectory = CB_isInvectory.Checked;
 

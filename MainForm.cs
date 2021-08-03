@@ -45,5 +45,11 @@ namespace Pos_PointOfSales
             Form fm = new FindSupplierForm();
             fm.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form fm = new FindArticleForm();
+            fm.Show();
+        }
     }
 }
