@@ -40,6 +40,10 @@ namespace Pos_PointOfSales
 
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form fm = new FindSupplierForm();
+            fm.Show();
+        }
     }
 }

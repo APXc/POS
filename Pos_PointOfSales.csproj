@@ -93,6 +93,12 @@
     <Compile Include="FindCostumerForm.Designer.cs">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindSupplierForm.Designer.cs">
+      <DependentUpon>FindSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,8 +131,16 @@
     <Content Include="cash-register-duotone.ico" />
     <Content Include="query\CreateTableCompany.sql" />
     <Compile Include="relactionDb.cs" />
+    <Compile Include="supplier.cs" />
+    <Compile Include="SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs" />
     <Content Include="query\CreateTableCostumer.sql" />
+    <Content Include="query\CreateTableSupplier.sql" />
     <Content Include="query\InsertCompany.sql" />
     <EmbeddedResource Include="CompanyForm.resx">
       <DependentUpon>CompanyForm.cs</DependentUpon>
@@ -136,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindCostumerForm.resx">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindSupplierForm.resx">
+      <DependentUpon>FindSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.en-GB.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -174,6 +191,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="CITATION.cff" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

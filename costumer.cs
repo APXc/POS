@@ -31,7 +31,7 @@ namespace Pos_PointOfSales
             string query = $"INSERT INTO[dbo].[Costumer] ([Name],[Surname],[FiscalCode],[Address],[State],[PhoneNumber],[Email],[Notes],[MktgId], [standardDiScont]) VALUES( '{name}' , '{surname}', '{fiscalCode}' , '{address}', '{state}', '{ phoneNumber}', '{email}', '{notes}', '{mktgId}', {standardDiScont})";
             relactionDb db = new relactionDb();
             db.voidQuery(Global.settings.conn, query);
-            query = $"Select * from [dbo].[Company] where [NameCompany] = '{name}' and [Surname] = '{surname}';";
+            query = $"Select * from [dbo].[Costumer] where [NameCompany] = '{name}' and [Surname] = '{surname}';";
             DataRow[] row = db.query(Global.settings.conn, query);
             this.name = row[0]["Name"].ToString();
             this.surname = row[0]["Surname"].ToString();

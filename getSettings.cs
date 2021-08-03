@@ -61,10 +61,11 @@ namespace Pos_PointOfSales
             string TestUser = "IF OBJECT_ID(N'dbo.users', N'U') IS NULL BEGIN  CREATE TABLE users([Id] [bigint] IDENTITY(1,1) NOT NULL, [username] [varchar](255) NOT NULL unique, [password] [varchar](255) NOT NULL,[name] [varchar](255) NOT NULL,[surname] [varchar](255) NOT NULL); END;";
             string TestCompany = "IF OBJECT_ID(N'dbo.Company', N'U') IS NULL BEGIN  CREATE TABLE Company(Id [bigint] IDENTITY(1,1) NOT NULL, NameCompany [varchar](255) NOT NULL, TaxCode [varchar](255) NOT NULL,FiscalCode [varchar](255) NOT NULL,Address [varchar](255) NOT NULL, State [varchar](255) NOT NULL, PhoneNumber [varchar](255) NOT NULL , email [varchar](255) NOT NULL,  legalString [varchar](255) NOT NULL, OptionalString  [varchar](255) NOT NULL); END;";
             string TestCostumer = "IF OBJECT_ID(N'dbo.Costumer', N'U') IS NULL BEGIN  CREATE TABLE Costumer(Id [bigint] IDENTITY(1,1) NOT NULL, Name [varchar](255) NOT NULL, Surname [varchar](255) NOT NULL, FiscalCode [varchar](255), Address [varchar](255), State [varchar](255), PhoneNumber [varchar](255) , Email [varchar](255),  Notes [varchar](255), MktgId  [varchar](255), standardDiScont [bigint]); END;";
-
+            string TestSupplier = "IF OBJECT_ID(N'dbo.Supplier', N'U') IS NULL BEGIN  CREATE TABLE Supplier([Id] [bigint] IDENTITY(1,1) NOT NULL, [name] [varchar](255) NOT NULL unique, [notes] [varchar](255),[fiscalCode] [varchar](255)); END;";
             TestOnDB(TestUser);
             TestOnDB(TestCompany);
             TestOnDB(TestCostumer);
+            TestOnDB(TestSupplier);
         }
         internal string GetConnectionString()
         {
@@ -128,6 +129,11 @@ namespace Pos_PointOfSales
                     catch (FormatException e)
                     {
                         MessageBox.Show("Errore in fase di Aggiunta Formaro Valore Errato", "Errore formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Convert.ToString(e), "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (TimeoutException e)
+                    {
+                        MessageBox.Show("Errore in fase di connessione SQL Server", "Errore Sql", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         MessageBox.Show(Convert.ToString(e), "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (SqlException e)
