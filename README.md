@@ -65,7 +65,9 @@ work is underway to make it compatible with:
   PLEASE READ THIS
 
    This is a test project, do not use in a production environment
+
    This Software is not currently certified by any National Tax Agency
+
    This software does not guarantee that there will be no data loss
 
 
