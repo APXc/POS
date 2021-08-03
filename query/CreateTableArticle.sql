@@ -1,0 +1,1 @@
+﻿CREATE TABLE Article([Id] [bigint] IDENTITY(1,1) NOT NULL, [code] [varchar](255) NOT NULL unique, [barcode] [varchar](255) NOT NULL unique, [rapidcode] [varchar](255) NOT NULL unique, [notes] [varchar](255), [isInvectory] [char] not null, [salesPrice] [float], [purchasePrice] [float], [salesTax] [float], [purchaseTax] [float]);
