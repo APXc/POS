@@ -63,12 +63,13 @@ namespace Pos_PointOfSales
             string TestCostumer = "IF OBJECT_ID(N'dbo.Costumer', N'U') IS NULL BEGIN  CREATE TABLE Costumer(Id [bigint] IDENTITY(1,1) NOT NULL, Name [varchar](255) NOT NULL, Surname [varchar](255) NOT NULL, FiscalCode [varchar](255), Address [varchar](255), State [varchar](255), PhoneNumber [varchar](255) , Email [varchar](255),  Notes [varchar](255), MktgId  [varchar](255), standardDiScont [bigint]); END;";
             string TestSupplier = "IF OBJECT_ID(N'dbo.Supplier', N'U') IS NULL BEGIN  CREATE TABLE Supplier([Id] [bigint] IDENTITY(1,1) NOT NULL, [name] [varchar](255) NOT NULL unique, [notes] [varchar](255),[fiscalCode] [varchar](255)); END;";
             string TestArticle = "IF OBJECT_ID(N'dbo.Article', N'U') IS NULL BEGIN  CREATE TABLE Article([Id] [bigint] IDENTITY(1,1) NOT NULL, [code] [varchar](255) NOT NULL unique, [barcode] [varchar](255) NOT NULL unique, [rapidcode] [varchar](255) NOT NULL unique, [notes] [varchar](255) ,  [description] [varchar](255) , [isInvectory] [char] not null, [salesPrice] money, [purchasePrice] money, [salesTax] money, [purchaseTax] money); END;";
-
+            string TestDiscont = "IF OBJECT_ID(N'dbo.Discount', N'U') IS NULL BEGIN  CREATE TABLE Discount([Id] [bigint] IDENTITY(1,1) NOT NULL, [code] [varchar](255) NOT NULL unique, [discont] [bigint] NOT NULL, [notes] [varchar](255)); END;";
             TestOnDB(TestUser);
             TestOnDB(TestCompany);
             TestOnDB(TestCostumer);
             TestOnDB(TestSupplier);
             TestOnDB(TestArticle);
+            TestOnDB(TestDiscont);
         }
         internal string GetConnectionString()
         {

@@ -1,0 +1,1 @@
+﻿CREATE TABLE Discount([Id] [bigint] IDENTITY(1,1) NOT NULL, [code] [varchar](255) NOT NULL unique, [discont] [bigint] NOT NULL, [notes] [varchar](255));
