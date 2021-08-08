@@ -16,12 +16,25 @@ namespace Pos_PointOfSales
     class Recepit
     {
         public int id { get; set; }
-        public List<article> articles { get; set; }
         public DateTime dateTime { get; set; }
         public costumer costumer { get; set; }
         public Decimal count { get; set; }
         public Discount discount { get; set; }
         public Payment payment { get; set; }
+        public List<RecepitRow> row { get; set; }
+ 
+    }
+
+    class RecepitRow
+    {
+        public int id { get; set; }
+        public int fatherID { get; set; }
+        public article article { get; set; }
+        public int qta { get; set; }
+        public Invectory Invectory { get; set; }
+        public decimal value { get; set; }
+        public decimal valuetotax { get; set; }
+
 
     }
 }
