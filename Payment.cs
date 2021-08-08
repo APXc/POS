@@ -17,7 +17,7 @@ namespace Pos_PointOfSales
         public int id { get; set; }
         public string name { get; set; }
 
-        public Payment Add(string name, string fiscalCode, string notes)
+        public Payment Add(string name)
         {
             string query = $"INSERT INTO[dbo].[Payment] ([name]) VALUES( '{name}')";
             relactionDb db = new relactionDb();

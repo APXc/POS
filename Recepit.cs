@@ -21,6 +21,7 @@ namespace Pos_PointOfSales
         public costumer costumer { get; set; }
         public Decimal count { get; set; }
         public Discount discount { get; set; }
+        public Payment payment { get; set; }
 
     }
 }

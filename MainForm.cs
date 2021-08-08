@@ -57,5 +57,11 @@ namespace Pos_PointOfSales
             Form fm = new FindDiscountForm();
             fm.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form fm = new FindPaymentForm();
+            fm.Show();
+        }
     }
 }
