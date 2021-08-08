@@ -22,6 +22,16 @@ namespace Pos_PointOfSales
         public Discount discount { get; set; }
         public Payment payment { get; set; }
         public List<RecepitRow> row { get; set; }
+
+        public void Add()
+        {
+
+        }
+
+        public void Update()
+        {
+
+        }
  
     }
 
@@ -35,6 +45,14 @@ namespace Pos_PointOfSales
         public decimal value { get; set; }
         public decimal valuetotax { get; set; }
 
+        public void Add()
+        {
 
+        }
+
+        public void Update()
+        {
+
+        }
     }
 }

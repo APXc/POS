@@ -169,6 +169,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="cash-register-duotone.ico" />
+    <Content Include="icons8-file-invoice-32.ico" />
     <Content Include="query\CreataTableDiscount.sql" />
     <Content Include="query\CreateTableArticle.sql" />
     <Content Include="query\CreateTableCompany.sql" />
@@ -322,6 +323,14 @@
       <IncludeHash>False</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".posrecepitxc">
+      <Visible>False</Visible>
+      <Description>Trasaction Pos Files</Description>
+      <Progid>mmmmmm</Progid>
+      <DefaultIcon>icons8-file-invoice-32.ico</DefaultIcon>
+    </FileAssociation>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
