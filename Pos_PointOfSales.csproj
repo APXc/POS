@@ -94,6 +94,7 @@
     <Compile Include="CostumerForm.Designer.cs">
       <DependentUpon>CostumerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Discount.cs" />
     <Compile Include="FindArticleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +106,12 @@
     </Compile>
     <Compile Include="FindCostumerForm.Designer.cs">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindDiscountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindDiscountForm.Designer.cs">
+      <DependentUpon>FindDiscountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FindSupplierForm.cs">
       <SubType>Form</SubType>
@@ -142,10 +149,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="cash-register-duotone.ico" />
+    <Content Include="query\CreataTableDiscount.sql" />
     <Content Include="query\CreateTableArticle.sql" />
     <Content Include="query\CreateTableCompany.sql" />
+    <Compile Include="Recepit.cs" />
     <Compile Include="relactionDb.cs" />
     <Compile Include="supplier.cs" />
+    <Compile Include="DiscountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscountForm.Designer.cs">
+      <DependentUpon>DiscountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindCostumerForm.resx">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindDiscountForm.resx">
+      <DependentUpon>FindDiscountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindSupplierForm.resx">
       <DependentUpon>FindSupplierForm.cs</DependentUpon>
@@ -211,6 +229,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="DiscountForm.resx">
+      <DependentUpon>DiscountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
