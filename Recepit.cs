@@ -20,8 +20,7 @@ namespace Pos_PointOfSales
         public DateTime dateTime { get; set; }
         public costumer costumer { get; set; }
         public Decimal count { get; set; }
-
-
+        public Discount discount { get; set; }
 
     }
 }
