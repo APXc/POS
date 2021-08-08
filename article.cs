@@ -94,6 +94,24 @@ namespace Pos_PointOfSales
             return dt;
         }
 
+        public List<article> ListArticle()
+        {
+
+            List<article> articles = new List<article>();
+            relactionDb db = new relactionDb();
+            string query = $"Select * from [dbo].[Article];";
+            DataRow[] rows = db.query(Global.settings.conn, query);
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                article vector = new article();
+                vector = vector.SetByKey(Convert.ToInt32(rows[i]["Id"]));
+                articles.Add(vector);
+            }
+
+            return articles;
+        }
+
         public void Print()
         {
             Console.WriteLine($"Article {id} - {code} ");

@@ -79,9 +79,27 @@ namespace Pos_PointOfSales
             return dt;
         }
 
+        public List<costumer> ListCostumers()
+        {
+
+            List<costumer> costumers = new List<costumer>();
+            relactionDb db = new relactionDb();
+            string query = $"Select * from [dbo].[Costumer];";
+            DataRow[] rows = db.query(Global.settings.conn, query);
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                costumer vector = new costumer();
+                vector = vector.SetByKey(Convert.ToInt32(rows[i]["id"]));
+                costumers.Add(vector);
+            }
+
+            return costumers;
+        }
+
         public void Print()
         {
-            Console.WriteLine($"Costume {id} - {name} {surname} ");
+            Console.WriteLine($"Costumer {id} - {name} {surname} ");
         }
     }
 }

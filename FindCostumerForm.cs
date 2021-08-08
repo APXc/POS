@@ -16,7 +16,6 @@ namespace Pos_PointOfSales
         {
             InitializeComponent();
         }
-
         private void FindCostumerForm_Load(object sender, EventArgs e)
         {
             costumer costumer = new costumer();
@@ -29,7 +28,6 @@ namespace Pos_PointOfSales
                 form.Show();
                 this.Close();
             }
-
         }
         private void filter_name(object sender, EventArgs e)
         {
@@ -43,8 +41,6 @@ namespace Pos_PointOfSales
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format($"[id] = {Convert.ToInt32(TB_id.Text)}");
         }
-
-
         private void filter(string columnName, string filterValue)
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[{0}] = '%%{1}%%'", columnName, filterValue);
@@ -56,24 +52,18 @@ namespace Pos_PointOfSales
             form.Show();
             this.Close();
         }
-
         private void BTN_clouse_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void SelectRowByUser(object sender, EventArgs e)
         {
-
-
             var a = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
             var s = dataGridView1.CurrentRow.Cells[0];
             try
             {
-                //Console.WriteLine($"selcet {s.Value.ToString()}");
                 Form form = new CostumerForm(Convert.ToInt32(s.Value));
                 form.Show();
-
             }
             catch (System.IndexOutOfRangeException)
             {
@@ -88,16 +78,12 @@ namespace Pos_PointOfSales
             {
                 MessageBox.Show("Errore in fase di Essecurzione Operazione", "Errore Operativo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show(Convert.ToString(ea), "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             catch (Exception ea)
             {
                 MessageBox.Show("Errore Gennerico", "Errore Operativo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show(Convert.ToString(ea), "Errore Operativo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
     }
 }
