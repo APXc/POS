@@ -113,6 +113,12 @@
     <Compile Include="FindDiscountForm.Designer.cs">
       <DependentUpon>FindDiscountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindInvectoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindInvectoryForm.Designer.cs">
+      <DependentUpon>FindInvectoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,7 @@
     </Compile>
     <Compile Include="getSettings.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Invectory.cs" />
     <Compile Include="lang.cs" />
     <Compile Include="LicenseForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +160,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment.cs" />
+    <Compile Include="InvectoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvectoryForm.Designer.cs">
+      <DependentUpon>InvectoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="cash-register-duotone.ico" />
@@ -204,6 +217,9 @@
     <EmbeddedResource Include="FindDiscountForm.resx">
       <DependentUpon>FindDiscountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FindInvectoryForm.resx">
+      <DependentUpon>FindInvectoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FindPaymentForm.resx">
       <DependentUpon>FindPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvectoryForm.resx">
+      <DependentUpon>InvectoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

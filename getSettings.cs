@@ -64,6 +64,7 @@ namespace Pos_PointOfSales
             string TestArticle = "IF OBJECT_ID(N'dbo.Article', N'U') IS NULL BEGIN  CREATE TABLE Article([Id] [bigint] IDENTITY(1,1) NOT NULL, [code] [varchar](255) NOT NULL unique, [barcode] [varchar](255) NOT NULL unique, [rapidcode] [varchar](255) NOT NULL unique, [notes] [varchar](255) ,  [description] [varchar](255) , [isInvectory] [char] not null, [salesPrice] money, [purchasePrice] money, [salesTax] money, [purchaseTax] money); END;";
             string TestDiscont = "IF OBJECT_ID(N'dbo.Discount', N'U') IS NULL BEGIN  CREATE TABLE Discount([Id] [bigint] IDENTITY(1,1) NOT NULL, [code] [varchar](255) NOT NULL unique, [discont] [bigint] NOT NULL, [notes] [varchar](255)); END;";
             string TestPayment = "IF OBJECT_ID(N'dbo.Payment', N'U') IS NULL BEGIN  CREATE TABLE Payment([Id] [bigint] IDENTITY(1,1) NOT NULL, [name] [varchar](255) NOT NULL unique); END;";
+            string TestInvectory = "IF OBJECT_ID(N'dbo.Invectory', N'U') IS NULL BEGIN  CREATE TABLE Invectory([Id] [bigint] IDENTITY(1,1) NOT NULL, [name] [varchar](255) NOT NULL unique); END;";
             TestOnDB(TestUser);
             TestOnDB(TestCompany);
             TestOnDB(TestCostumer);
@@ -71,6 +72,7 @@ namespace Pos_PointOfSales
             TestOnDB(TestArticle);
             TestOnDB(TestDiscont);
             TestOnDB(TestPayment);
+            TestOnDB(TestInvectory);
         }
         internal string GetConnectionString()
         {

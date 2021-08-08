@@ -140,6 +140,7 @@
             resources.ApplyResources(this.button8, "button8");
             this.button8.Name = "button8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 

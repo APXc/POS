@@ -63,5 +63,11 @@ namespace Pos_PointOfSales
             Form fm = new FindPaymentForm();
             fm.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form fm = new FindInvectoryForm();
+            fm.Show();
+        }
     }
 }
