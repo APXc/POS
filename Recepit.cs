@@ -26,9 +26,14 @@ namespace Pos_PointOfSales
 
         public void Add(DateTime dateTime, costumer costumer, decimal count, Discount discount, Payment payment, List<RecepitRow> rows)
         {
-
-            this.SecureKey = Security.Encrypt($"start::costumer::{costumer.name}::datetime::{dateTime.ToLongDateString()}::user::{Global.user.username}::point::{count.ToString()}::end", Global.user.username, Global.user.name);
-            string query = $"INSERT INTO [dbo].[Recepit]([dateTime] ,[CostumerID] ,[count] ,[DiscountID] ,[PaymentID], [securekey]) VALUES( '{dateTime}' , '{costumer.id}' , '{count}', '{discount.id }', '{this.SecureKey}')";
+            Random rnd = new Random();
+            int myRandomNo = rnd.Next(10000000, 99999999);
+            int myRandomNo2 = rnd.Next(10000000, 99999999);
+            this.SecureKey = Security.Encrypt($"start::costumer::{costumer.name}::datetime::{dateTime.ToLongDateString()}::user::{Global.user.username}::point::{count.ToString()}::end", myRandomNo.ToString(), myRandomNo2.ToString());
+            string query = $"INSERT INTO [dbo].[Recepit]([dateTime] ,[CostumerID] ,[count] ,[DiscountID] ,[PaymentID], [securekey]) VALUES( '{dateTime}' , {costumer.id} , '{count}', {discount.id }, {payment.id}, '{this.SecureKey}')";
+            Console.WriteLine("################");
+            Console.WriteLine(query);
+            Console.WriteLine("################");
             relactionDb db = new relactionDb();
             db.voidQuery(Global.settings.conn, query);
             query = $"Select * from [dbo].[Recepit] where [dateTime] = '{dateTime}' and [CostumerID]  = {costumer.id} and [securekey]  = '{this.SecureKey}';";
@@ -81,6 +86,14 @@ namespace Pos_PointOfSales
         {
             relactionDb db = new relactionDb();
             string query = $"Select * from [dbo].[Recepit];";
+            DataTable dt = db.queryToTable(Global.settings.conn, query);
+            return dt;
+        }
+
+        public static DataTable FindAllAndDet()
+        {
+            relactionDb db = new relactionDb();
+            string query = $"Select t1.id, t1.dateTime, (t2.Name + ' ' + t2.Surname ) as 'Costumer', t1.count as 'Total', t3.name as 'Payment', t4.code as 'Discount', t1.securekey from recepit t1 inner join Costumer t2 on t1.CostumerID = t2.Id inner join Payment t3 on t1.PaymentID = t3.Id inner join Discount t4 on t1.DiscountID = t4.Id;";
             DataTable dt = db.queryToTable(Global.settings.conn, query);
             return dt;
         }

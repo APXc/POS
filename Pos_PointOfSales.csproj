@@ -107,6 +107,12 @@
     <Compile Include="FindCostumerForm.Designer.cs">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindRecepitFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindRecepitFrom.Designer.cs">
+      <DependentUpon>FindRecepitFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindDiscountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindCostumerForm.resx">
       <DependentUpon>FindCostumerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindRecepitFrom.resx">
+      <DependentUpon>FindRecepitFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindDiscountForm.resx">
       <DependentUpon>FindDiscountForm.cs</DependentUpon>

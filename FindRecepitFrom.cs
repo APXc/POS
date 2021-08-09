@@ -19,9 +19,9 @@ namespace Pos_PointOfSales
 
         private void FindRecepitFrom_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Recepit.FindAll();
+            dataGridView1.DataSource = Recepit.FindAllAndDet();
             dataGridView1.AutoGenerateColumns = true;
-            DataRow[] row = Recepit.FindAll().Select();
+            DataRow[] row = Recepit.FindAllAndDet().Select();
             if (row.Length == 0)
             {
                 Form form = new RecepitForm();
@@ -30,14 +30,7 @@ namespace Pos_PointOfSales
             }
         }
 
-        private void filter_name(object sender, EventArgs e)
-        {
-            filter("Code", TB_name.Text);
-        }
-        private void filter_fiscalCode(object sender, EventArgs e)
-        {
-            filter("Discount", TB_surname.Text);
-        }
+
         private void filter_id(object sender, EventArgs e)
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format($"[id] = {Convert.ToInt32(TB_id.Text)}");
