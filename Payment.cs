@@ -52,6 +52,24 @@ namespace Pos_PointOfSales
             return dt;
         }
 
+        public static List<Payment> ListPayment()
+        {
+
+            List<Payment> ListPayment = new List<Payment>();
+            relactionDb db = new relactionDb();
+            string query = $"Select * from [dbo].[Payment];";
+            DataRow[] rows = db.query(Global.settings.conn, query);
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                Payment vector = new Payment();
+                vector = vector.SetByKey(Convert.ToInt32(rows[i]["Id"]));
+                ListPayment.Add(vector);
+            }
+
+            return ListPayment;
+        }
+
         public void Print()
         {
             Console.WriteLine($"Payment {id} - {name} ");

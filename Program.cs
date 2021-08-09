@@ -21,7 +21,7 @@ namespace Pos_PointOfSales
             if (Global.Loged)
             {
                 // MainForm is defined elsewhere
-                Application.Run(new MainForm());
+                Application.Run(new RecepitForm());
             }
         }
     }

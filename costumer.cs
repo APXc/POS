@@ -79,7 +79,7 @@ namespace Pos_PointOfSales
             return dt;
         }
 
-        public List<costumer> ListCostumers()
+        public static List<costumer> ListCostumers()
         {
 
             List<costumer> costumers = new List<costumer>();

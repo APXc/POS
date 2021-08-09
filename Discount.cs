@@ -58,6 +58,25 @@ namespace Pos_PointOfSales
             return dt;
         }
 
+        public static List<Discount> ListDiscount()
+        {
+
+            List<Discount> ListDiscount = new List<Discount>();
+            relactionDb db = new relactionDb();
+            string query = $"Select * from [dbo].[Discount];";
+            DataRow[] rows = db.query(Global.settings.conn, query);
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                Discount vector = new Discount();
+                vector = vector.SetByKey(Convert.ToInt32(rows[i]["Id"]));
+                ListDiscount.Add(vector);
+            }
+
+            return ListDiscount;
+        }
+
+
         public void Print()
         {
             Console.WriteLine($"Discount {id} - {code} ");

@@ -85,7 +85,23 @@ namespace Pos_PointOfSales
             return dt;
         }
 
+        public static List<Recepit> AllListRecepit()
+        {
 
+            List<Recepit> Recepit = new List<Recepit>();
+            relactionDb db = new relactionDb();
+            string query = $"Select * from [dbo].[Recepit];";
+            DataRow[] rows = db.query(Global.settings.conn, query);
+
+            for (int i = 0; i < rows.Length; i++)
+            {
+                Recepit vector = new Recepit();
+                vector = vector.SetByKey(Convert.ToInt32(rows[i]["Id"]));
+                Recepit.Add(vector);
+            }
+
+            return Recepit;
+        }
         public void Update()
         {
 

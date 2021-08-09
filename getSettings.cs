@@ -66,7 +66,7 @@ namespace Pos_PointOfSales
             string TestPayment = "IF OBJECT_ID(N'dbo.Payment', N'U') IS NULL BEGIN  CREATE TABLE Payment([Id] [bigint] IDENTITY(1,1) NOT NULL, [name] [varchar](255) NOT NULL unique); END;";
             string TestInvectory = "IF OBJECT_ID(N'dbo.Invectory', N'U') IS NULL BEGIN  CREATE TABLE Invectory([Id] [bigint] IDENTITY(1,1) NOT NULL, [name] [varchar](255) NOT NULL unique); END;";
             string TestRecepit = "IF OBJECT_ID(N'dbo.Recepit', N'U') IS NULL BEGIN   CREATE TABLE Recepit([Id] [bigint] IDENTITY(1,1) NOT NULL, [dateTime] [DateTime] NOT NULL, CostumerID bigint NOT NULL, count decimal not null, DiscountID bigint NOT NULL,  PaymentID bigint NOT NULL, securekey varchar(255) unique not null); END;";
-            string TestRecepitRow = "IF OBJECT_ID(N'dbo.RecepitRow', N'U') IS NULL BEGIN  CREATE TABLE RecepitRow([Id] [bigint] IDENTITY(1,1) NOT NULL, FatherID bigint NOT NULL, qta int not null, linenum int not null, ,value decimal not null,valueToTax decimal, articleID bigint NOT NULL,  invectoryID bigint NOT NULL); END;";
+            string TestRecepitRow = "IF OBJECT_ID(N'dbo.RecepitRow', N'U') IS NULL BEGIN  CREATE TABLE RecepitRow([Id] [bigint] IDENTITY(1,1) NOT NULL, FatherID bigint NOT NULL, qta int not null, linenum int not null,value decimal not null,valueToTax decimal, articleID bigint NOT NULL,  invectoryID bigint NOT NULL); END;";
             TestOnDB(TestUser);
             TestOnDB(TestCompany);
             TestOnDB(TestCostumer);

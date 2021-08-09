@@ -86,7 +86,7 @@ namespace Pos_PointOfSales
             db.voidQuery(Global.settings.conn, query);
         }
 
-        public DataTable FindAll()
+        public static DataTable FindAll()
         {
             relactionDb db = new relactionDb();
             string query = $"Select * from [dbo].[Article];";
@@ -94,7 +94,7 @@ namespace Pos_PointOfSales
             return dt;
         }
 
-        public List<article> ListArticle()
+        public static List<article> ListArticle()
         {
 
             List<article> articles = new List<article>();

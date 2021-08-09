@@ -20,9 +20,9 @@ namespace Pos_PointOfSales
         private void FindInvectoryForm_Load(object sender, EventArgs e)
         {
             Invectory invectory = new Invectory();
-            dataGridView1.DataSource = invectory.FindAll();
+            dataGridView1.DataSource = Invectory.FindAll();
             dataGridView1.AutoGenerateColumns = true;
-            DataRow[] row = invectory.FindAll().Select();
+            DataRow[] row = Invectory.FindAll().Select();
             if (row.Length == 0)
             {
                 Form form = new InvectoryForm();
