@@ -77,7 +77,7 @@ namespace Pos_PointOfSales
             return this;
         }
 
-        public DataTable FindAll()
+        public static DataTable FindAll()
         {
             relactionDb db = new relactionDb();
             string query = $"Select * from [dbo].[Recepit];";

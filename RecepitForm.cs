@@ -41,6 +41,13 @@ namespace Pos_PointOfSales
             dataGridView1.CurrentRow.Cells[4].Value = dataGridView1.CurrentRow.Cells[3].Value != null ? (Convert.ToDouble(dataGridView1.CurrentRow.Cells[1].Value) * article.salesTax) / 100 : 0;
             dataGridView1.CurrentRow.Cells[5].Value = Convert.ToDouble(dataGridView1.CurrentRow.Cells[3].Value) + Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value);
 
+            //double tot = 0;
+            //for(int i = 0; i<dataGridView1.Rows.Count; i++)
+            //{
+            //    tot += dataGridView1.Rows[i].Cells[5] != null ? Convert.ToDouble(dataGridView1.Rows[i].Cells[5]) : 0;
+            //}
+            //TB_total.Text = tot.ToString();
+
         }
 
         private void SetDataGrid()
@@ -132,7 +139,40 @@ namespace Pos_PointOfSales
         {
             SetDataGrid();
             SetCB();
+            TB_total.Enabled = false;
+            
 
+        }
+
+        private void BTN_Action_Click(object sender, EventArgs e)
+        {
+            Recepit recepit = new Recepit();
+            List<RecepitRow> rows = new List<RecepitRow>();
+            Decimal val = 0;
+
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+            {
+                RecepitRow recepitRow = new RecepitRow();
+                recepitRow.article = keysArticle[dataGridView1.Rows[i].Cells[0].Value.ToString()];
+                recepitRow.linenum = i+1;
+                recepitRow.Invectory = keysInvectory[dataGridView1.Rows[i].Cells[2].Value.ToString()];
+                recepitRow.qta = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                recepitRow.value = Convert.ToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                recepitRow.valuetotax = Convert.ToDecimal(dataGridView1.Rows[i].Cells[5].Value.ToString());
+                rows.Add(recepitRow);
+                val += recepitRow.valuetotax;
+            }
+
+            recepit.Add(DTP_date.Value, keysCostumer[CB_costumer.Text], val, keysDiscount[CB_Discount.Text], keysPayment[CB_Payment.Text], rows);
+
+            Form f = new FindRecepitFrom();
+            f.Show();
+            Close();
+        }
+
+        private void BTN_Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

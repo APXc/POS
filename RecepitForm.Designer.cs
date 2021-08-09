@@ -37,12 +37,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTN_Action = new System.Windows.Forms.Button();
             this.BTN_Close = new System.Windows.Forms.Button();
-            this.recepitRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.recepitRowBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recepitRowBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,7 @@
             // 
             // TB_total
             // 
+            this.TB_total.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TB_total.Location = new System.Drawing.Point(13, 280);
             this.TB_total.Name = "TB_total";
             this.TB_total.Size = new System.Drawing.Size(199, 20);
@@ -104,6 +105,7 @@
             this.BTN_Action.TabIndex = 6;
             this.BTN_Action.Text = "Action";
             this.BTN_Action.UseVisualStyleBackColor = true;
+            this.BTN_Action.Click += new System.EventHandler(this.BTN_Action_Click);
             // 
             // BTN_Close
             // 
@@ -113,10 +115,7 @@
             this.BTN_Close.TabIndex = 7;
             this.BTN_Close.Text = "Close";
             this.BTN_Close.UseVisualStyleBackColor = true;
-            // 
-            // recepitRowBindingSource
-            // 
-            this.recepitRowBindingSource.DataSource = typeof(Pos_PointOfSales.RecepitRow);
+            this.BTN_Close.Click += new System.EventHandler(this.BTN_Close_Click);
             // 
             // label1
             // 
@@ -162,6 +161,10 @@
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Total";
+            // 
+            // recepitRowBindingSource
+            // 
+            this.recepitRowBindingSource.DataSource = typeof(Pos_PointOfSales.RecepitRow);
             // 
             // RecepitForm
             // 
