@@ -7,7 +7,7 @@ namespace Pos_PointOfSales
 {
     class Security
     {
-        static string Encrypt(string textToEncrypt, string publickey , string secretkey )
+       public static string Encrypt(string textToEncrypt, string publickey , string secretkey )
         {
             try
             {
@@ -38,7 +38,7 @@ namespace Pos_PointOfSales
             }
         }
 
-        static string Decrypt(string textToDecrypt, string publickey, string secretkey)
+        public static string Decrypt(string textToDecrypt, string publickey, string secretkey)
         {
             try
             {
