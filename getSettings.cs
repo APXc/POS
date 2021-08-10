@@ -23,7 +23,10 @@ namespace Pos_PointOfSales
             {"database", 3 },
             {"server", 4 },
             {"userdb", 5 },
-            {"passworddb", 6 }
+            {"passworddb", 6 },
+            {"sendSMSProvider",7 },
+            {"SMSProviderUSer",8 },
+            {"SMSProviderPass",9 }
         };
         public string lang { get; set; }
         public string name { get; set; }
@@ -33,6 +36,9 @@ namespace Pos_PointOfSales
         public string userdb { get; set; }
         public string passworddb { get; set; }
         public SqlConnection conn { get; set; }
+        public string sendSMSProvider { get; set; }
+        public string SMSProviderUSer { get; set; }
+        public string SMSProviderPass { get; set; }
 
 
         public void init()
@@ -51,6 +57,9 @@ namespace Pos_PointOfSales
             this.server = xmlnode[0].ChildNodes.Item(SETTING["server"]).InnerText.Trim();
             this.userdb = xmlnode[0].ChildNodes.Item(SETTING["userdb"]).InnerText.Trim();
             this.passworddb = xmlnode[0].ChildNodes.Item(SETTING["passworddb"]).InnerText.Trim();
+            this.sendSMSProvider = xmlnode[0].ChildNodes.Item(SETTING["sendSMSProvider"]).InnerText.Trim();
+            this.SMSProviderUSer = xmlnode[0].ChildNodes.Item(SETTING["SMSProviderUSer"]).InnerText.Trim();
+            this.SMSProviderPass = xmlnode[0].ChildNodes.Item(SETTING["SMSProviderPass"]).InnerText.Trim();
             this.conn = ConnectionDb();
             this.DataBaseTest();
         }

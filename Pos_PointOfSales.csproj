@@ -58,9 +58,25 @@
     <ApplicationIcon>cash-register-duotone.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="com.Messente.Api, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\com.Messente.Api.2.1.0\lib\netstandard1.3\com.Messente.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="FubarCoder.RestSharp.Portable.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
+      <HintPath>packages\FubarCoder.RestSharp.Portable.Core.4.0.7\lib\net45\FubarCoder.RestSharp.Portable.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FubarCoder.RestSharp.Portable.HttpClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
+      <HintPath>packages\FubarCoder.RestSharp.Portable.HttpClient.4.0.7\lib\net45\FubarCoder.RestSharp.Portable.HttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonSubTypes, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\JsonSubTypes.1.2.0\lib\net47\JsonSubTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -165,6 +181,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notify.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="InvectoryForm.cs">
       <SubType>Form</SubType>
@@ -295,6 +312,7 @@
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CITATION.cff" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\RecepitRow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -317,6 +335,7 @@
     <Content Include="query\CreateTableUsers.sql" />
     <Content Include="query\InsertCostumer.sql" />
     <Content Include="query\InsertUser.sql" />
+    <Content Include="RecepitTemplate.txt" />
     <Content Include="SetApp.xml" />
   </ItemGroup>
   <ItemGroup>

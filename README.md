@@ -16,6 +16,9 @@ For Start create a file SetApp.xml
   <server>YOUR_SERVER_SQL_LINK</server>
   <userdb>YOUR_USER_DATABASE</userdb>
   <passworddb>YOUR_PASSOWRD_DATABASE</passworddb>
+  <sendSMSProvider>MESSENTE</sendSMSProvider>
+  <SMSProviderUSer>YOUR_MESSENTE_API_USERNAME</SMSProviderUSer>
+  <SMSProviderPass>YOUR_MESSENTE_API_PASSWORD</SMSProviderPass>
 </set>
 
 ```

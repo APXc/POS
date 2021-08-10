@@ -24,7 +24,7 @@ namespace Pos_PointOfSales
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+          //  Notify.SendExample();
         }
 
         private void licenseToolStripMenuItem_Click(object sender, EventArgs e)

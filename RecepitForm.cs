@@ -164,7 +164,7 @@ namespace Pos_PointOfSales
             }
 
             recepit.Add(DTP_date.Value, keysCostumer[CB_costumer.Text], val, keysDiscount[CB_Discount.Text], keysPayment[CB_Payment.Text], rows);
-
+            recepit.SendNotifySms();
             Form f = new FindRecepitFrom();
             f.Show();
             Close();

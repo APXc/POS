@@ -31,9 +31,6 @@ namespace Pos_PointOfSales
             int myRandomNo2 = rnd.Next(10000000, 99999999);
             this.SecureKey = Security.Encrypt($"start::costumer::{costumer.name}::datetime::{dateTime.ToLongDateString()}::user::{Global.user.username}::point::{count.ToString()}::end", myRandomNo.ToString(), myRandomNo2.ToString());
             string query = $"INSERT INTO [dbo].[Recepit]([dateTime] ,[CostumerID] ,[count] ,[DiscountID] ,[PaymentID], [securekey]) VALUES( '{dateTime}' , {costumer.id} , '{count}', {discount.id }, {payment.id}, '{this.SecureKey}')";
-            Console.WriteLine("################");
-            Console.WriteLine(query);
-            Console.WriteLine("################");
             relactionDb db = new relactionDb();
             db.voidQuery(Global.settings.conn, query);
             query = $"Select * from [dbo].[Recepit] where [dateTime] = '{dateTime}' and [CostumerID]  = {costumer.id} and [securekey]  = '{this.SecureKey}';";
@@ -118,6 +115,12 @@ namespace Pos_PointOfSales
         public void Update()
         {
 
+        }
+
+        public void SendNotifySms()
+        {
+            Notify.SendRecepit(this);
+            return;
         }
  
     }
