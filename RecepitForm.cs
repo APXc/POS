@@ -21,7 +21,8 @@ namespace Pos_PointOfSales
         public RecepitForm()
         {
             InitializeComponent();
-         
+            //DateTime date = DateTime.Now;
+            this.DTP_date.Value = DateTime.Now;
            
         }
 
@@ -163,8 +164,13 @@ namespace Pos_PointOfSales
                 val += recepitRow.valuetotax;
             }
 
-            recepit.Add(DTP_date.Value, keysCostumer[CB_costumer.Text], val, keysDiscount[CB_Discount.Text], keysPayment[CB_Payment.Text], rows);
-            recepit.SendNotifySms();
+            recepit.Add(dateTime: new DateTime(DTP_date.Value.Ticks),
+                        costumer: keysCostumer[CB_costumer.Text],
+                        count: val,
+                        discount: keysDiscount[CB_Discount.Text],
+                        payment: keysPayment[CB_Payment.Text],
+                        rows: rows);
+           // recepit.SendNotifySms();
             Form f = new FindRecepitFrom();
             f.Show();
             Close();

@@ -29,11 +29,11 @@ namespace Pos_PointOfSales
             Random rnd = new Random();
             int myRandomNo = rnd.Next(10000000, 99999999);
             int myRandomNo2 = rnd.Next(10000000, 99999999);
-            this.SecureKey = Security.Encrypt($"start::costumer::{costumer.name}::datetime::{dateTime.ToLongDateString()}::user::{Global.user.username}::point::{count.ToString()}::end", myRandomNo.ToString(), myRandomNo2.ToString());
-            string query = $"INSERT INTO [dbo].[Recepit]([dateTime] ,[CostumerID] ,[count] ,[DiscountID] ,[PaymentID], [securekey]) VALUES( '{dateTime}' , {costumer.id} , '{count}', {discount.id }, {payment.id}, '{this.SecureKey}')";
+            this.SecureKey = Security.Encrypt($"start::costumer::{costumer.name}::user::{Global.user.username}::point::{count.ToString()}::end", myRandomNo.ToString(), myRandomNo2.ToString());
+            string query = $"INSERT INTO [dbo].[Recepit]([dateTime] ,[CostumerID] ,[count] ,[DiscountID] ,[PaymentID], [securekey]) VALUES( CONVERT(DATETIME,'{dateTime.ToShortDateString()}',103)  , {costumer.id} , '{count}', {discount.id }, {payment.id}, '{this.SecureKey}')";
             relactionDb db = new relactionDb();
             db.voidQuery(Global.settings.conn, query);
-            query = $"Select * from [dbo].[Recepit] where [dateTime] = '{dateTime}' and [CostumerID]  = {costumer.id} and [securekey]  = '{this.SecureKey}';";
+            query = $"Select * from [dbo].[Recepit] where  [CostumerID]  = {costumer.id} and [securekey]  = '{this.SecureKey}';";
             DataRow[] row = db.query(Global.settings.conn, query);
             this.id = Convert.ToInt32(row[0]["id"]);
             this.count = Convert.ToDecimal(row[0]["count"]);
