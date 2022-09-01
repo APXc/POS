@@ -39,7 +39,7 @@ INSERT INTO [dbo].[users]
    ,[surname])
    VALUES(
    'ADMIN'
-   ,'YOUR_ADMIN_PASSOWORD'
+   ,'YOUR_ADMIN_PASSWORD'
    ,'ADMIN'
    ,'ADMIN');
 ```
@@ -57,12 +57,12 @@ work is underway to make it compatible with:
 
 |                |Version                        | Year                        |
 |----------------|-------------------------------|-----------------------------|
-|Dotnet 		 |`Core '4.7.2'` 			     | 2022                        |
-|MySql           |`*******`                      | 2022                        |
-|MongoDB         |`*******`                      | 2023                        |
-|Ubunto          |`20.4`                         | 2023                        |
-|WebClient       |`*******`                      | 2024                        |
-|Chrome Addon    |`*******`                      | 2024                        |
+|Dotnet 		 |`Core '4.7.2'` 			     | 2024                        |
+|MySql           |`*******`                      | 2024                        |
+|MongoDB         |`*******`                      | 2025                        |
+|Ubunto          |`20.4`                         | 2025                        |
+|WebClient       |`*******`                      | 2026                        |
+|Chrome Addon    |`*******`                      | 2026                        |
 
 ## Attection 
   PLEASE READ THIS
