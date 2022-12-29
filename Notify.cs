@@ -21,7 +21,7 @@ namespace Pos_PointOfSales
 
             string msg = "";
 
-            msg = $"AP Store test Srl \n\n Viale Milano 12 \n Montecchio Maggiore (VI) \n P.IVA 01157894897441 \n \n DOCUMENTO COMMERCIALE \n di vedità o prestazione \n\n Descrizione------Prezzo IVA\n";
+            msg = $"DOCUMENTO COMMERCIALE \n di vedità o prestazione \n\n Descrizione------Prezzo IVA\n";
             decimal value = 0;
             decimal Taxvalue = 0;
             int qta = 0;

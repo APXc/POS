@@ -78,6 +78,7 @@
             this.CB_Discount.Name = "CB_Discount";
             this.CB_Discount.Size = new System.Drawing.Size(200, 21);
             this.CB_Discount.TabIndex = 3;
+            this.CB_Discount.SelectedIndexChanged += new System.EventHandler(this.CB_Discount_SelectedIndexChanged);
             // 
             // TB_total
             // 

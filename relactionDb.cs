@@ -85,7 +85,6 @@ namespace Pos_PointOfSales
                         conn.Close();
                     }
                     scope.Complete();
-                   // MessageBox.Show("Operazione Completata", "Complate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
@@ -177,7 +176,6 @@ namespace Pos_PointOfSales
                         conn.Close();
                     }
                     scope.Complete();
-                    //MessageBox.Show("Operazione Completata", "Complate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return row;
                 }
             }
@@ -274,7 +272,6 @@ namespace Pos_PointOfSales
                         conn.Close();
                     }
                     scope.Complete();
-                    //MessageBox.Show("Operazione Completata", "Complate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return dataTable;
                 }
             }

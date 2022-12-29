@@ -15,7 +15,7 @@ namespace Pos_PointOfSales
  
     class getSettings
     {
-        private const String filename = @"D:/Project/Pos_PointOfSales/SetApp.xml";
+        private const String filename = @"D:/Project/Pos_PointOfSales/SetApp.xml"; //SET YOUR PATH
         private static Dictionary<string, int> SETTING = new Dictionary<string, int>(){
             {"lang", 0},
             {"name", 1},
@@ -178,7 +178,6 @@ namespace Pos_PointOfSales
                         conn.Close();
                     }
                     scope.Complete();
-                    //MessageBox.Show("Operazione Completata", "Complate", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch

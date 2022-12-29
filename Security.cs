@@ -11,10 +11,7 @@ namespace Pos_PointOfSales
         {
             try
             {
-               // string textToEncrypt = "WaterWorld";
                 string ToReturn = "";
-                //string publickey = "12345678";
-                //string secretkey = "87654321";
                 byte[] secretkeyByte = { };
                 secretkeyByte = System.Text.Encoding.UTF8.GetBytes(secretkey);
                 byte[] publickeybyte = { };
@@ -42,10 +39,7 @@ namespace Pos_PointOfSales
         {
             try
             {
-               // string textToDecrypt = "6+PXxVWlBqcUnIdqsMyUHA==";
                 string ToReturn = "";
-                //string publickey = "12345678";
-                //string secretkey = "87654321";
                 byte[] privatekeyByte = { };
                 privatekeyByte = System.Text.Encoding.UTF8.GetBytes(secretkey);
                 byte[] publickeybyte = { };

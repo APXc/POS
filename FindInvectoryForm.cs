@@ -64,7 +64,6 @@ namespace Pos_PointOfSales
             var s = dataGridView1.CurrentRow.Cells[0];
             try
             {
-                //Console.WriteLine($"selcet {s.Value.ToString()}");
                 Form form = new InvectoryForm(Convert.ToInt32(s.Value));
                 form.Show();
 

@@ -60,9 +60,9 @@ namespace Pos_PointOfSales
             var s = dataGridView1.CurrentRow.Cells[0];
             try
             {
-                //Console.WriteLine($"selcet {s.Value.ToString()}");
-                //Form form = new DiscountForm(Convert.ToInt32(s.Value));
-                //form.Show();
+                Console.WriteLine($"selcet {s.Value.ToString()}");
+                Form form = new DiscountForm(Convert.ToInt32(s.Value));
+                form.Show();
 
             }
             catch (System.IndexOutOfRangeException)

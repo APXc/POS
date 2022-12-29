@@ -21,7 +21,6 @@ namespace Pos_PointOfSales
         public RecepitForm()
         {
             InitializeComponent();
-            //DateTime date = DateTime.Now;
             this.DTP_date.Value = DateTime.Now;
            
         }
@@ -42,12 +41,6 @@ namespace Pos_PointOfSales
             dataGridView1.CurrentRow.Cells[4].Value = dataGridView1.CurrentRow.Cells[3].Value != null ? (Convert.ToDouble(dataGridView1.CurrentRow.Cells[1].Value) * article.salesTax) / 100 : 0;
             dataGridView1.CurrentRow.Cells[5].Value = Convert.ToDouble(dataGridView1.CurrentRow.Cells[3].Value) + Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value);
 
-            //double tot = 0;
-            //for(int i = 0; i<dataGridView1.Rows.Count; i++)
-            //{
-            //    tot += dataGridView1.Rows[i].Cells[5] != null ? Convert.ToDouble(dataGridView1.Rows[i].Cells[5]) : 0;
-            //}
-            //TB_total.Text = tot.ToString();
 
         }
 
@@ -170,7 +163,6 @@ namespace Pos_PointOfSales
                         discount: keysDiscount[CB_Discount.Text],
                         payment: keysPayment[CB_Payment.Text],
                         rows: rows);
-           // recepit.SendNotifySms();
             Form f = new FindRecepitFrom();
             f.Show();
             Close();
@@ -179,6 +171,11 @@ namespace Pos_PointOfSales
         private void BTN_Close_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CB_Discount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

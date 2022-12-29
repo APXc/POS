@@ -19,7 +19,6 @@ namespace Pos_PointOfSales
         public LicenseForm()
         {
             InitializeComponent();
-            //FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Global.settings.lang);
             string[] lines = File.ReadAllLines(filename);
             foreach (string line in lines)
